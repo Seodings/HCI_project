@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./css/reset05.css">
+    <link rel="stylesheet" href="./css/style.css">
+    <link rel="stylesheet" href="./css/swiper.css"> <!--event slider-->
+    <title>Gikipedia</title>
+    <script src="https://kit.fontawesome.com/05b76b65ac.js" crossorigin="anonymous"></script>
+    <script src="./js/main.js" defer></script>
+    <script src="./js/swiper.min.js"></script>
+    <script src="./js/jquery.min_1.12.4.js"></script>
+    <script src="./js/modernizr-custom.js"></script>
+    <script src="./js/ie-checker.js"></script>
+    
+
+</head>
+<body>
+<!--기본적인 header 부분-->
+
+    <ul class="afterlogin">
+        <li>
+            <i class="fas fa-house-user"></i>
+            <a href="./index.html">Mypage</a>
+        </li>
+
+        <li>
+            <i class="fas fa-sign-out-alt"></i>
+            <a href="">logout</a>
+        </li>
+
+        
+    </ul>
+      
+    <div class="headerlogo">
+        
+        <h1>
+            <a href="index.html">
+                <em><img src="img/logo2.png"></em>
+            </a>
+        </h1>
+        
+    </div>
+  
+    
+
+    <nav class="navbar">
+        <ul class="navbar__menu">
+            <li><a href="./index2.html">Home</a></li>
+            <li><a href="">Category</a></li>
+            <li><a href="">Top Chart</a></li>
+            <li><a href="">Newly Game</a></li>
+            <li><a href="">Search Game</a></li>
+
+        </ul>
+          
+    </nav>
+
+    <!--기본적인 header 부분-->
+   
+    <div class="slider">
+        <div class="swiper-container">
+            <h2><em>Today news</em></h2>
+                <div class="swiper-wrapper">
+                    <div class="swiper-slide ss1">
+                        <div class="container">
+                            <div class="row">
+                                <h3>카카오톡 TNT 피하기</h3>
+                                <p>역대급 이벤트 상자 방출!!</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="swiper-slide ss2">
+                        <div class="container">
+                            <div class="row">
+                                <h3>롤</h3>
+                                <p>신규 맵 출시</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="swiper-slide ss3">
+                        <div class="container">
+                            <div class="row">
+                                <h3>슈퍼마리오</h3>
+                                <p>새로운 아이템 출시</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="swiper-pagination"></div>
+                <div class="swiper-button-prev"></div>
+                <div class="swiper-button-next"></div>
+            </div>
+        </div>
+
+        <section id="game">
+            <div class="container">
+                <div class="row">
+                    <div class="game">
+                        <h2 class="ir_so">게임 순위</h2>
+                        <div class="game_title">
+                            <ul>
+                                <li class="active"><a href="#">All</a></li>
+                                <li><a href="#">Racing</a></li>
+                                <li><a href="#">VR</a></li>
+                                <li><a href="#">Role playing</a></li>
+                            </ul>
+                        </div>
+                        <div class="game_chart">
+                            <div class="swiper-container2">
+                                <div class="chart_cont1 swiper-wrapper">
+                                    <div class="swiper-slide">
+                                        <div class="poster">
+                                            <figure>
+                                                <img src="./image/game01.jpg">
+                                            </figure>
+                                            <div class="rank"><strong>1</strong></div>
+                                            <div class="infor"> 
+                                                <div class="infor_btn">
+                                                <a href="#">game detail</a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+
+        <script>
+            var swiper = new Swiper('.swiper-container',{
+            pagination: {
+                el: '.swiper-pagination',
+                type: 'bullets'
+            },
+            navigation: {
+                nextEl: '.swiper-button-next',
+                prevEl: '.swiper-button-prev',
+            },
+            autoplay: {
+                delay: 5000,
+            },
+        });
+
+        var movBtn = $(".game_title > ul > li");    
+          
+
+        
+
+        movBtn.click(function(e){
+            e.preventDefault();
+            var target = $(this);         
+            var index = target.index();  
+            movBtn.removeClass("active");   
+            target.addClass("active");    
+           
+        });
+        </script>
+
+</body>
+</html>
